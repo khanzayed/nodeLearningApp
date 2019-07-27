@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JPh-Us-kg4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FiraSans-Bold.ttf">
+            <string>FiraSans-Bold</string>
+        </array>
+        <array key="FiraSans-Book.ttf">
+            <string>FiraSans-Book</string>
+        </array>
+        <array key="FiraSans-Regular.ttf">
+            <string>FiraSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="m6q-PJ-m1O">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="JPh-Us-kg4" customClass="LoginViewController" customModule="NodeLearningApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EJh-7x-NEc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly6-St-mE3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to discover the power of Objective Driven Networking?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1I-kz-7Hr">
+                                        <rect key="frame" x="71.5" y="75" width="232" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="DLe-Kl-c0Q"/>
+                                            <constraint firstAttribute="width" constant="232" id="cQM-vh-nvq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FiraSans-Book" family="Fira Sans" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1h2-Cp-yRa">
+                                        <rect key="frame" x="97.5" y="215" width="180" height="237"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-Rh-QLi">
+                                                <rect key="frame" x="37.5" y="0.0" width="105" height="20"/>
+                                                <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SSF-W8-E1Y">
+                                                <rect key="frame" x="0.0" y="45" width="180" height="192"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNQ-Ub-XmR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="54"/>
+                                                        <state key="normal" image="linkedin"/>
+                                                        <connections>
+                                                            <action selector="linkedInLogin:" destination="JPh-Us-kg4" eventType="touchUpInside" id="MbI-qQ-Ogf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vps-hN-KYs">
+                                                        <rect key="frame" x="0.0" y="69" width="180" height="54"/>
+                                                        <state key="normal" image="facebook"/>
+                                                        <connections>
+                                                            <action selector="facebookLogin:" destination="JPh-Us-kg4" eventType="touchUpInside" id="hhy-kO-0Nj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrh-ew-FPM">
+                                                        <rect key="frame" x="0.0" y="138" width="180" height="54"/>
+                                                        <state key="normal" image="google"/>
+                                                        <connections>
+                                                            <action selector="googleLogin:" destination="JPh-Us-kg4" eventType="touchUpInside" id="XkF-fd-ye3"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="670-ye-3Ri">
+                                        <rect key="frame" x="77.5" y="580" width="220" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already registered using email?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kx1-Fz-4ha">
+                                                <rect key="frame" x="12" y="0.0" width="196" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgG-aN-l5K">
+                                                <rect key="frame" x="87" y="16.5" width="46" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="FiraSans-Bold" family="Fira Sans" pointSize="15"/>
+                                                <state key="normal" title="Sign in">
+                                                    <color key="titleColor" red="0.25882352939999997" green="0.5450980392" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="emailSignInTapped:" destination="JPh-Us-kg4" eventType="touchUpInside" id="T1B-rq-86n"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="19t-d6-0hG"/>
+                                            <constraint firstAttribute="height" constant="47" id="e7f-Dp-Aii"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1h2-Cp-yRa" firstAttribute="centerX" secondItem="Ly6-St-mE3" secondAttribute="centerX" id="9D0-Aq-CNh"/>
+                                    <constraint firstItem="670-ye-3Ri" firstAttribute="centerX" secondItem="Ly6-St-mE3" secondAttribute="centerX" id="Ft5-Io-5b9"/>
+                                    <constraint firstAttribute="bottom" secondItem="670-ye-3Ri" secondAttribute="bottom" constant="40" id="Hnr-y2-iRR"/>
+                                    <constraint firstItem="1h2-Cp-yRa" firstAttribute="centerY" secondItem="Ly6-St-mE3" secondAttribute="centerY" id="eOA-gw-qPX"/>
+                                    <constraint firstItem="M1I-kz-7Hr" firstAttribute="centerX" secondItem="Ly6-St-mE3" secondAttribute="centerX" id="mKn-GG-LYv"/>
+                                    <constraint firstItem="M1I-kz-7Hr" firstAttribute="top" secondItem="Ly6-St-mE3" secondAttribute="top" constant="75" id="wXv-Ba-X2t"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ly6-St-mE3" firstAttribute="height" secondItem="EJh-7x-NEc" secondAttribute="height" id="Cbn-3e-ifX"/>
+                            <constraint firstItem="Ly6-St-mE3" firstAttribute="leading" secondItem="KVO-33-JBO" secondAttribute="leading" id="Kv0-ra-18B"/>
+                            <constraint firstItem="Ly6-St-mE3" firstAttribute="bottom" secondItem="KVO-33-JBO" secondAttribute="bottom" id="Kz3-b7-H7W"/>
+                            <constraint firstItem="Ly6-St-mE3" firstAttribute="trailing" secondItem="KVO-33-JBO" secondAttribute="trailing" id="L16-5z-HQX"/>
+                            <constraint firstItem="Ly6-St-mE3" firstAttribute="width" secondItem="EJh-7x-NEc" secondAttribute="width" id="OIb-Qq-3e5"/>
+                            <constraint firstItem="Ly6-St-mE3" firstAttribute="top" secondItem="EJh-7x-NEc" secondAttribute="top" id="bwl-lE-MeJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KVO-33-JBO"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnFacebook" destination="vps-hN-KYs" id="MyM-TA-tVn"/>
+                        <outlet property="btnGoogle" destination="Wrh-ew-FPM" id="ddD-FL-HOS"/>
+                        <outlet property="btnLinkedin" destination="XNQ-Ub-XmR" id="fLP-eD-r2d"/>
+                        <outlet property="btnSignIn" destination="rgG-aN-l5K" id="9pN-PY-rEg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzg-km-H0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-798" y="990"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook" width="180" height="54.5"/>
+        <image name="google" width="180" height="54.5"/>
+        <image name="linkedin" width="180" height="54.5"/>
+    </resources>
+</document>

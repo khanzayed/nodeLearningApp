@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NodeLearningApp</key>
+	<dict>
+		<key>kBaseUrl</key>
+		<string>https://apidev.bluetieglobal.com</string>
+		<key>kIsDebugging</key>
+		<true/>
+		<key>kGoogleClientID</key>
+		<string>94396806922-4e7fpsuhabd98rk578fcgetfd1sm95am.apps.googleusercontent.com</string>
+		<key>kGoogleAPIKey</key>
+		<string>AIzaSyDBmBmJHUcamMbhB9xw8FKXTsPQ-tKmJIA</string>
+		<key>kAppID</key>
+		<string>id0143273850</string>
+	</dict>
+</dict>
+</plist>
