@@ -21,6 +21,8 @@
 		D0C5FBD522ECB6A500D29791 /* AppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C5FBD322ECB6A400D29791 /* AppDataModel.swift */; };
 		D0C5FBD622ECB6A500D29791 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C5FBD422ECB6A400D29791 /* APIHandler.swift */; };
 		D0C5FBD822ECB74300D29791 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C5FBD722ECB74300D29791 /* Enumerations.swift */; };
+		D0F010B222ECC2CD007BC37B /* UserAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F010B122ECC2CD007BC37B /* UserAPIHandler.swift */; };
+		D0F010B422ECC2D6007BC37B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F010B322ECC2D6007BC37B /* UserModel.swift */; };
 		DA0164508B59895A84E4DD69 /* Pods_NodeLearningApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8776C9B7949A8320CD31687D /* Pods_NodeLearningApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		D0C5FBD322ECB6A400D29791 /* AppDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataModel.swift; sourceTree = "<group>"; };
 		D0C5FBD422ECB6A400D29791 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		D0C5FBD722ECB74300D29791 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		D0F010B122ECC2CD007BC37B /* UserAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIHandler.swift; sourceTree = "<group>"; };
+		D0F010B322ECC2D6007BC37B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,10 +198,20 @@
 		D0C5FBD222ECB66E00D29791 /* API Handler */ = {
 			isa = PBXGroup;
 			children = (
+				D0F010B022ECC2B0007BC37B /* UserAPIHandler */,
 				D0C5FBD422ECB6A400D29791 /* APIHandler.swift */,
 				D0C5FBD322ECB6A400D29791 /* AppDataModel.swift */,
 			);
 			path = "API Handler";
+			sourceTree = "<group>";
+		};
+		D0F010B022ECC2B0007BC37B /* UserAPIHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D0F010B122ECC2CD007BC37B /* UserAPIHandler.swift */,
+				D0F010B322ECC2D6007BC37B /* UserModel.swift */,
+			);
+			path = UserAPIHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,8 +414,10 @@
 				D0C5FBD122ECB01100D29791 /* Alerts.swift in Sources */,
 				D0C5FBCD22ECA16D00D29791 /* Environment.swift in Sources */,
 				D0C5FBD522ECB6A500D29791 /* AppDataModel.swift in Sources */,
+				D0F010B222ECC2CD007BC37B /* UserAPIHandler.swift in Sources */,
 				D088035422EC9CEF00AE412C /* AppDelegate.swift in Sources */,
 				D088035C22EC9CEF00AE412C /* NodeLearningApp.xcdatamodeld in Sources */,
+				D0F010B422ECC2D6007BC37B /* UserModel.swift in Sources */,
 				D0C5FBD822ECB74300D29791 /* Enumerations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

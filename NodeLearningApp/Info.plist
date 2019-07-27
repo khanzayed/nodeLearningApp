@@ -63,16 +63,16 @@
 				<string>com.BlueTie.NodeLearningApp</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>com.BlueTie.NodeLearningApp</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.319968461111-vjju06lljevt9s983260qflk9tfqklps</string>
-			</array>
-		</dict>
+<!--        <dict>-->
+<!--            <key>CFBundleTypeRole</key>-->
+<!--            <string>Editor</string>-->
+<!--            <key>CFBundleURLName</key>-->
+<!--            <string>com.BlueTie.NodeLearningApp</string>-->
+<!--            <key>CFBundleURLSchemes</key>-->
+<!--            <array>-->
+<!--                <string>com.googleusercontent.apps.319968461111-vjju06lljevt9s983260qflk9tfqklps</string>-->
+<!--            </array>-->
+<!--        </dict>-->
         <dict>
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
