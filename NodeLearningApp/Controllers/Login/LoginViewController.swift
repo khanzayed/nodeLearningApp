@@ -12,10 +12,12 @@ import FacebookLogin
 import FacebookCore
 import FBSDKShareKit
 
-enum SocialLoginType: String {
-    case facebook
-    case linkedin
-    case google
+enum LoginType: Int {
+    case Google = 1
+    case Facebook
+    case LinkedIn
+    case Email
+    case Mobile
 }
 
 
@@ -26,7 +28,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnLinkedin: UIButton!
     @IBOutlet weak var btnSignIn:UIButton!
     
-    fileprivate var socialLogin: SocialLoginType!
+    fileprivate var loginType: LoginType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +87,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: GIDSignInUIDelegate, GIDSignInDelegate {
     
     func googleLoginfromSignIn() {
-        whichSocialLogin(loginName: .google)
+        whichSocialLogin(loginName: .Google)
         GIDSignIn.sharedInstance().clientID = Environment.shared.getGoogleClientID()
         GIDSignIn.sharedInstance().signIn()
         GIDSignIn.sharedInstance().delegate = self
@@ -93,8 +95,16 @@ extension LoginViewController: GIDSignInUIDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
+            let params: [String: Any] = [
+                "firstName"         :       user.profile.givenName,
+                "lastName"          :       user.profile.familyName,
+                "emailID"           :       user.profile.email,
+                "socialMediaToken"  :       user.authentication.idToken,
+                "loginType"         :       LoginType.Google.rawValue
+                //            "userDeviceID"      :   getUserDeviceID()
+            ]
             
-            socialLoginToServer(accessToken: user.authentication.idToken, logintType: .google) { (sucess) in
+            socialLoginToServer(params: params) { (sucess) in
                 if sucess {
                     GIDSignIn.sharedInstance()?.signOut()
                 }
@@ -124,43 +134,20 @@ extension LoginViewController: GIDSignInUIDelegate, GIDSignInDelegate {
 //MARK: - login methods with handler
 extension LoginViewController {
     
-    func socialLoginToServer(accessToken: String, logintType: SocialLoginType, completion:  @escaping (Bool) -> Void ) {
-//        var params: [String: String] = [
-//            "providerName"      :   logintType.rawValue,
-//            "accessToken"       :   accessToken,
-//            "userDeviceID"      :   getUserDeviceID()
-//        ]
-//
-//        if let token = userDefaults.value(forKey: "FirebaseToken") as? String, token.count > 0 {
-//            params["userDeviceToken"]  = token
-//        }
-//
-//        if let token = userDefaults.value(forKey: UserDefaultsKey.APNS_TOKEN) as? String, token.count > 0 {
-//            params["pushWooshDeviceToken"]  = token  //It's just APNS token but key named as pushwooshDeviceToken
-//        }
-//        if let hwid = PushNotificationManager.push()?.getHWID() {
-//            params["pushWooshDeviceID"] = hwid
-//        }
-//
+    func socialLoginToServer(params: [String:Any], completion:  @escaping (Bool) -> Void ) {
 //        showHud(self.view)
-//        UserDetailsAPIHandler().socialLoginWithNode(params, completion: { [weak self] (responseData) in
-//            guard let strongSelf = self else {
-//                return
-//            }
-//            completion(true)
-//            if let errorObj =  responseData.errorObject {
+        UserDetailsAPIHandler().loginWithNode(params, completion: { [weak self] (responseData) in
+            guard let strongSelf = self else {
+                return
+            }
+            completion(true)
+            if let errorObj =  responseData.errorObject {
 //                hideHud(strongSelf.view)
-//
-//                switch errorObj.code {
-//                case 1004, 1007:
-//                    strongSelf.view.makeToast(errorObj.message ?? "")
-//                case 1002:
-//                    strongSelf.noAuthorisationLogout()
-//                default:
-//                    strongSelf.view.makeToast(errorObj.message ?? ErrorToasts.IAPWrongError)
-//                }
-//                return
-//            }
+
+                print(errorObj.message ?? "ERROR")
+                return
+            }
+            
 //            if responseData.status == 1040 || responseData.status == 1041 {
 //                strongSelf.showSocialLoginErrorPopUp(isEmail: true)
 //                return
@@ -168,13 +155,13 @@ extension LoginViewController {
 //                strongSelf.showSocialLoginErrorPopUp(isEmail: false)
 //                return
 //            } else if let response =  responseData.userObj {
-//                socialLoginType = logintType
+//                LoginType = logintType
 //                DataAccessor.shared.updateMyProfile(response)
 //
 //                LoginManagerModel().setUserDefaults(response: response)
 //                strongSelf.completedSocialLogin(response: response)
 //            }
-//        } )
+        })
     }
     
 }
@@ -184,7 +171,7 @@ extension LoginViewController {
 extension LoginViewController {
     
     func facebookLogin() {
-        whichSocialLogin(loginName: .facebook)
+        whichSocialLogin(loginName: .Facebook)
         
         let loginManager = LoginManager()
         loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { loginResult in
@@ -199,12 +186,12 @@ extension LoginViewController {
             case .success( _, _, let token):
                 
                 print("facebook token :- \(token.authenticationToken)")
-                self.socialLoginToServer(accessToken: token.authenticationToken, logintType: .facebook, completion: { (loginSucess) in
-                    
-                    if loginSucess {
-                        loginManager.logOut()
-                    }
-                })
+//                self.socialLoginToServer(accessToken: token.authenticationToken, logintType: .Facebook, completion: { (loginSucess) in
+//
+//                    if loginSucess {
+//                        loginManager.logOut()
+//                    }
+//                })
             }
         }
     }
@@ -231,7 +218,7 @@ extension LoginViewController {
 //        }
     }
     
-    func whichSocialLogin(loginName: SocialLoginType) {
-        socialLogin = loginName
+    func whichSocialLogin(loginName: LoginType) {
+        loginType = loginName
     }
 }

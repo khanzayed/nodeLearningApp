@@ -5,7 +5,7 @@
 	<key>NodeLearningApp</key>
 	<dict>
 		<key>kBaseUrl</key>
-		<string>https://apidev.bluetieglobal.com</string>
+		<string>http://localhost:3000</string>
 		<key>kIsDebugging</key>
 		<true/>
 		<key>kGoogleClientID</key>
