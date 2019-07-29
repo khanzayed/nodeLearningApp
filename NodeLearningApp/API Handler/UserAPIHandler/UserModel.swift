@@ -28,7 +28,7 @@ class UserDataModel: AppDataModel {
 class User {
     
     var id: Int?
-    var email: String?
+    var emailID: String?
     var phoneNumber: String?
     var fName: String?
     var lName: String?
@@ -38,7 +38,12 @@ class User {
     var isProfileComplete: Bool?
     
     init(details: [String:Any]) {
-        
+        id = details["userID"] as? Int
+        emailID = details["emailID"] as? String
+        phoneNumber = details["phoneNumber"] as? String
+        fName = details["firstName"] as? String
+        lName = details["lastName"] as? String
+        isProfileComplete = details["isProfileComplete"] as? Bool ?? false
     }
     
 }

@@ -60,6 +60,23 @@ class LoginViewController: UIViewController {
         
     }
     
+    fileprivate func pushToNextViewController(user: User) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if user.isProfileComplete == false {
+            let nextVC = storyboard.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+            nextVC.user = user
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        } else {
+            let nextVC = storyboard.instantiateViewController(withIdentifier: "LogOutViewController") as! LogOutViewController
+            nextVC.user = user
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        }
+    }
+    
     //MARK: - sign in button action
     @IBAction func linkedInLogin(_ sender: UIButton) {
         self.linkedInLogin()
@@ -148,19 +165,9 @@ extension LoginViewController {
                 return
             }
             
-//            if responseData.status == 1040 || responseData.status == 1041 {
-//                strongSelf.showSocialLoginErrorPopUp(isEmail: true)
-//                return
-//            } else if responseData.status == 1042 {
-//                strongSelf.showSocialLoginErrorPopUp(isEmail: false)
-//                return
-//            } else if let response =  responseData.userObj {
-//                LoginType = logintType
-//                DataAccessor.shared.updateMyProfile(response)
-//
-//                LoginManagerModel().setUserDefaults(response: response)
-//                strongSelf.completedSocialLogin(response: response)
-//            }
+            if let user = responseData.userObj {
+                strongSelf.pushToNextViewController(user: user)
+            }
         })
     }
     
