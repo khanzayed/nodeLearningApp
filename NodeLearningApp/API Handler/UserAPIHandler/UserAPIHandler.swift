@@ -20,7 +20,7 @@ class UserDetailsAPIHandler: APIHandler {
     }
     
     func loginWithNode(_ params: [String: Any], completion:  @escaping (UserDataModel) -> Void) {
-        let url = baseURL + "/v3/socialSignIn"
+        let url = baseURL + "/v1/socialSignIn"
         
         super.getCURLRequest(url: url, params: params, method: .post)
         alamofireManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: super.getHeaders()).responseJSON { (response) in
