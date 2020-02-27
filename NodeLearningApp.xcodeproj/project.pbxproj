@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D03A87FD24024E72004239F3 /* RadialGradientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A87FC24024E72004239F3 /* RadialGradientController.swift */; };
+		D03A87FF2402514B004239F3 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A87FE2402514B004239F3 /* RadialGradientLayer.swift */; };
+		D03F1EDB24083C7F007D943C /* RadialViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F1EDA24083C7F007D943C /* RadialViewCell.swift */; };
 		D088035422EC9CEF00AE412C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088035322EC9CEF00AE412C /* AppDelegate.swift */; };
 		D088035622EC9CEF00AE412C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088035522EC9CEF00AE412C /* LoginViewController.swift */; };
 		D088035922EC9CEF00AE412C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D088035722EC9CEF00AE412C /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		5ADDDB2B4C3A082BD8DE763A /* Pods-NodeLearningApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeLearningApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NodeLearningApp/Pods-NodeLearningApp.debug.xcconfig"; sourceTree = "<group>"; };
 		84DB81B1191B8E23152FD9C8 /* Pods-NodeLearningApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeLearningApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-NodeLearningApp/Pods-NodeLearningApp.release.xcconfig"; sourceTree = "<group>"; };
 		8776C9B7949A8320CD31687D /* Pods_NodeLearningApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodeLearningApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D03A87FC24024E72004239F3 /* RadialGradientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientController.swift; sourceTree = "<group>"; };
+		D03A87FE2402514B004239F3 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
+		D03F1EDA24083C7F007D943C /* RadialViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialViewCell.swift; sourceTree = "<group>"; };
 		D088035022EC9CEF00AE412C /* NodeLearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodeLearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D088035322EC9CEF00AE412C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D088035522EC9CEF00AE412C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +158,9 @@
 			children = (
 				D0C5FBC522EC9F1900D29791 /* Login */,
 				D0F010B722ED91F0007BC37B /* LogOut */,
+				D03A87FC24024E72004239F3 /* RadialGradientController.swift */,
+				D03A87FE2402514B004239F3 /* RadialGradientLayer.swift */,
+				D03F1EDA24083C7F007D943C /* RadialViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -426,11 +435,14 @@
 				D0C5FBD622ECB6A500D29791 /* APIHandler.swift in Sources */,
 				D088035622EC9CEF00AE412C /* LoginViewController.swift in Sources */,
 				D0C5FBD122ECB01100D29791 /* Alerts.swift in Sources */,
+				D03A87FF2402514B004239F3 /* RadialGradientLayer.swift in Sources */,
 				D0F010B622ED90D8007BC37B /* RegistrationViewController.swift in Sources */,
+				D03F1EDB24083C7F007D943C /* RadialViewCell.swift in Sources */,
 				D0C5FBCD22ECA16D00D29791 /* Environment.swift in Sources */,
 				D0C5FBD522ECB6A500D29791 /* AppDataModel.swift in Sources */,
 				D0F010B922ED9205007BC37B /* LogOutViewController.swift in Sources */,
 				D0F010B222ECC2CD007BC37B /* UserAPIHandler.swift in Sources */,
+				D03A87FD24024E72004239F3 /* RadialGradientController.swift in Sources */,
 				D088035422EC9CEF00AE412C /* AppDelegate.swift in Sources */,
 				D088035C22EC9CEF00AE412C /* NodeLearningApp.xcdatamodeld in Sources */,
 				D0F010B422ECC2D6007BC37B /* UserModel.swift in Sources */,
@@ -598,13 +610,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65CHXDU6A7;
+				DEVELOPMENT_TEAM = R8UKHMCW74;
 				INFOPLIST_FILE = NodeLearningApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BlueTie.NodeLearningApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BlueTie.bluetiedev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -617,13 +629,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65CHXDU6A7;
+				DEVELOPMENT_TEAM = R8UKHMCW74;
 				INFOPLIST_FILE = NodeLearningApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BlueTie.NodeLearningApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BlueTie.bluetiedev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
