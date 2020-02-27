@@ -19,16 +19,6 @@ class RadialGradientLayer: CALayer {
 
         needsDisplayOnBoundsChange = true
     }
-//
-//     init(center:CGPoint,radius:CGFloat,colors:[CGColor]){
-//
-//        self.center = center
-//        self.radius = radius
-//        self.colors = colors
-//
-//        super.init()
-//
-//    }
     
     init(frame: CGRect, colors:[CGColor]) {
         self.center = CGPoint(x: frame.width / 2, y: frame.height / 2)
